@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .dark-mode {
+            background-color: #1a202c;
+            color: #a0aec0;
+        }
+        .dark-mode header {
+            background-color: #2d3748;
+        }
+        .dark-mode .bg-white {
+            background-color: #2d3748;
+            color: #a0aec0;
+        }
+        .dark-mode .bg-gray-200 {
+            background-color: #4a5568;
+            color: #a0aec0;
+        }
+        .dark-mode .bg-blue-600 {
+            background-color: #2b6cb0;
+        }
+        .dark-mode .text-gray-900 {
+            color: #a0aec0;
+        }
+        .dark-mode .hover\\:underline:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-5">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-3xl font-bold">My Portfolio</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="index.html#projects" class="hover:underline">Projects</a></li>
+                    <li><a href="#" class="hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="bg-gray-200 text-gray-800 px-3 py-2 rounded">Dark Mode</button>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-white py-20">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center">Contact Me</h2>
+            <form class="max-w-lg mx-auto bg-gray-100 p-8 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <label for="name" class="block text-lg font-medium mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full p-3 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-lg font-medium mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full p-3 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-lg font-medium mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" class="w-full p-3 border rounded" required></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 My Portfolio | Contact: myemail@example.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            themeToggle.textContent = body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        });
+    </script>
+
+</body>
+</html>

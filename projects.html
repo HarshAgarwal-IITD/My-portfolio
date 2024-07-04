@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .dark-mode {
+            background-color: #1a202c;
+            color: #a0aec0;
+        }
+        .dark-mode header {
+            background-color: #2d3748;
+        }
+        .dark-mode .bg-white {
+            background-color: #2d3748;
+            color: #a0aec0;
+        }
+        .dark-mode .bg-gray-200 {
+            background-color: #4a5568;
+            color: #a0aec0;
+        }
+        .dark-mode .bg-blue-600 {
+            background-color: #2b6cb0;
+        }
+        .dark-mode .text-gray-900 {
+            color: #a0aec0;
+        }
+        .dark-mode .hover\\:underline:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-5">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-3xl font-bold">My Portfolio</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="projects.html" class="hover:underline">Projects</a></li>
+                    <li><a href="contact.html" class="hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="bg-gray-200 text-gray-800 px-3 py-2 rounded">Dark Mode</button>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container mx-auto py-20 px-4">
+        <div class="max-w-screen-lg mx-auto relative">
+            <h2 class="text-4xl font-bold mb-8 text-center">Projects</h2>
+            <div id="project-carousel" class="relative overflow-hidden rounded-lg shadow-lg">
+                <div class="carousel-inner flex">
+                    <div class="carousel-item w-full h-full bg-white p-6 flex items-center justify-center">
+                        <div class="max-w-lg mx-auto flex">
+                            <div class="w-1/2">
+                                <img src="hangman/hangman.png" alt="Project 1" class="rounded-lg shadow-lg">
+                            </div>
+                            <div class="w-1/2 ml-4">
+                                <h5 class="text-2xl font-bold mb-2"><a href="hangman/index.html">HangMan</a></h5>
+                                <p class="mb-4">lets test your memory with the classic game of Hangman, flip the cards ,remember their position and find its pair untill all the cards unlock</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-full h-full bg-white p-6 flex items-center justify-center hidden">
+                        <div class="max-w-lg mx-auto flex">
+                            <div class="w-1/2">
+                                <img src="rockPaperScissors\rpc.png" alt="Project 2" class="rounded-lg shadow-lg">
+                            </div>
+                            <div class="w-1/2 ml-4 ">
+                                <h5 class="text-2xl font-bold mb-2"> <a href="rockPaperScissors/index.html"> RockPaperScissor</a></h5>
+                                <p class="mb-4">Rock-paper-scissors is a simple hand game usually played between two people. Each player simultaneously forms one of three shapes with an outstretched hand: rock, paper, or scissors. The game has three possible outcomes other than a tie: rock crushes scissors, scissors cut paper, and paper covers rock.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-full h-full bg-white p-6 flex items-center justify-center hidden">
+                        <div class="max-w-lg mx-auto flex">
+                            <div class="w-1/2">
+                                <img src="clock\clockImg.png" alt="Project 3" class="rounded-lg shadow-lg">
+                            </div>
+                            <div class="w-1/2 ml-4">
+                                <h5 class="text-2xl font-bold mb-2"><a href="clock\index.html"> My Clock</a></h5>
+                                <p class="mb-4">Here is a basic clock that shows real time</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-full h-full bg-white p-6 flex items-center justify-center hidden">
+                        <div class="max-w-lg mx-auto flex">
+                            <div class="w-1/2">
+                                <img src="calculator\calci.png" alt="Project 4" class="rounded-lg shadow-lg">
+                            </div>
+                            <div class="w-1/2 ml-4">
+                                <h5 class="text-2xl font-bold mb-2"><a href="calculator/index.html">calculator</a></h5>
+                                <p class="mb-4">Here is a basic calculator </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-800 px-3 py-2 rounded">Prev</button>
+                <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-800 px-3 py-2 rounded">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 My Portfolio | Contact: myemail@example.com</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            themeToggle.textContent = body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        });
+
+        // Carousel functionality
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        let currentItem = 0;
+
+        document.getElementById('prev').addEventListener('click', () => {
+            carouselItems[currentItem].classList.add('hidden');
+            currentItem = (currentItem - 1 + carouselItems.length) % carouselItems.length;
+            carouselItems[currentItem].classList.remove('hidden');
+            gsap.fromTo(carouselItems[currentItem], { opacity: 0 }, { opacity: 1, duration: 1 });
+        });
+
+        document.getElementById('next').addEventListener('click', () => {
+            carouselItems[currentItem].classList.add('hidden');
+            currentItem = (currentItem + 1) % carouselItems.length;
+            carouselItems[currentItem].classList.remove('hidden');
+            gsap.fromTo(carouselItems[currentItem], { opacity: 0 }, { opacity: 1, duration: 1 });
+        });
+
+        // GSAP animations
+        gsap.from("header", { y: -100, opacity: 0, duration: 1 });
+        gsap.from("#projects .carousel-item", { y: 50, opacity: 0, duration: 1, stagger: 0.3 });
+    </script>
+
+</body>
+</html>

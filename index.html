@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+    <style>
+         
+        .dark-mode {
+            background-color: #1a202c;
+            color: #a0aec0;
+        }
+        .dark-mode header {
+            background-color: #2d3748;
+        }
+        .dark-mode .bg-white {
+            background-color: #2d3748;
+            color: #a0aec0;
+        }
+        .dark-mode .bg-gray-200 {
+            background-color: #4a5568;
+            color: #a0aec0;
+        }
+        .dark-mode .bg-blue-600 {
+            background-color: #2b6cb0;
+        }
+        .dark-mode .text-gray-900 {
+            color: #a0aec0;
+        }
+        .dark-mode .hover\\:underline:hover {
+            text-decoration: underline;
+        }
+ 
+
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-5">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-3xl font-bold">My Portfolio</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="projects.html" class="hover:underline">Projects</a></li>
+                    <li><a href="contact.html" class="hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="bg-gray-200 text-gray-800 px-3 py-2 rounded">Dark Mode</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-white py-20">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">Welcome to My Portfolio</h2>
+            <p class="text-lg mb-6">I am a passionate developer. Here are some of my projects.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container mx-auto py-20 px-4">
+        <div id="project-carousel" class="relative">
+            <div class="carousel-inner">
+                <div class="carousel-item active bg-white p-6 rounded-lg shadow-lg">
+                    <img src="clock\clockImg.png" alt="Project 1" class="mb-4 rounded">
+                    <h5 class="text-xl font-bold mb-2 justify-center" ><a href="clock\index.html"> My Clock</a></h5>
+                    <p>Here is a basic clock that shows real time</p>
+                </div>
+                <div class="carousel-item bg-white p-6 rounded-lg shadow-lg hidden">
+                    <img src="hangman/hangman.png" alt="Project 2" class="mb-4 rounded">
+                    <h5 class="text-xl font-bold mb-2"><a href="hangman/index.html">HangMan</a></h5>
+                    <p>lets test your memory with the classic game of Hangman, flip the cards ,remember their position and find its pair untill all the cards unlock</p>
+                </div>
+                <div class="carousel-item bg-white p-6 rounded-lg shadow-lg hidden">
+                    <img src="rockPaperScissors\rpc.png" alt="Project 3" class="mb-4 rounded">
+                    <h5 class="text-xl font-bold mb-2"><a href="rockPaperScissors/index.html"> RockPaperScissor</a></h5>
+                    <p>Rock-paper-scissors is a simple hand game usually played between two people. Each player simultaneously forms one of three shapes with an outstretched hand: rock, paper, or scissors. The game has three possible outcomes other than a tie: rock crushes scissors, scissors cut paper, and paper covers rock.</p>
+                </div>
+                <div class="carousel-item bg-white p-6 rounded-lg shadow-lg hidden">
+                    <img src="calculator\calci.png" alt="Project 4" class="mb-4 rounded">
+                    <h5 class="text-xl font-bold mb-2"><a href="calculator/index.html"> calculator</a></h5>
+                    <p>Description of project 4.</p>
+                </div>
+            </div>
+            <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-800 px-3 py-2 rounded">Prev</button>
+            <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-800 px-3 py-2 rounded">Next</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 My Portfolio | Contact: myemail@example.com</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>
